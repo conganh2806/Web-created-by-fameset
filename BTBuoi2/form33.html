@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script language="JavaScript">
+        function onChangeText() {
+            var txt1 = document.f1.t1.value;
+            
+            for(var i = 0; i < txt1.length; i++) {
+                
+                if(txt1.charCodeAt(i) >= 65 && txt1.charCodeAt(i) <= 90)
+                {
+                   document.f1.t2.value += String.fromCharCode(txt1.charCodeAt(i) + 32);
+                   
+                }
+                if(txt1.charCodeAt(i) >= 97 && txt1.charCodeAt(i) <= 122)
+                {
+                    document.f1.t2.value += String.fromCharCode(txt1.charCodeAt(i) -32);
+                }
+                
+            }
+            
+            
+        }
+        function clearText() {
+            document.f1.t2.value = "";
+        }
+    </script>
+</head>
+<body onLoad="document.f1.t1.focus()">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            margin-top: 314px;
+        }
+
+    </style>
+
+    <form name="f1" action="xulidoichu.jsp" method="post(/get)">
+        <input type="text" name="t1" onBlur="onChangeText()" onfocus="clearText()">
+        <input type="text" name="t2">
+    </form>
+    
+   
+</body>
+</html>

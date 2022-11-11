@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <script language="JavaScript">
+            function validateform() {
+                var userName = document.getElementById("user").value;
+                var password = document.getElementById("password").value;
+                if(userName == null || userName == "")
+                {
+                    if(password == null || password == ""){
+                        alert("Please enter username and password");
+
+                    }
+                    else {
+                        alert("Username can't be blank");
+                    }
+                }
+                else
+                {
+                    if(password == null || password == ""){
+                        alert("Password can't be blank");
+
+                    }
+                    else if(password.length < 6) {
+                        alert("Password at least 6 characters required");
+                    }
+                }
+
+            }
+            function reset() {
+                document.getElementById("user").value = "";
+                document.getElementById("password").value = "";
+            }
+        </script>
+    </head>
+    <body style="background-color:green;">
+        <style>
+            html,body {
+                height:100%;
+                width:100%;
+                margin:0;
+            }
+            body , body {
+                display:flex;
+            }
+            .wrapper {
+                margin:auto;
+            }
+        </style>
+        <div class="wrapper">
+            <h3>Login</h3>
+
+            <form name=f1 action="" method="">
+                <table id="table">
+                    <tr>
+                        <td>Username</td>
+                        <td>
+                            <input type="text" id="user">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td>
+                            <input type="text" id="password">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <button name="butOK" onClick="validateform()">OK</button>
+            <button name="butReset" onClick="reset()">Reset</button>
+        </div>
+        
+
+    </body>
+
+    
+
+</html>

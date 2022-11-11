@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script language="JavaScript">
+        function FB(){
+            //alert("Chao mung ban den voi JavaScript");
+            // document.write("5+6=",5+6);
+            var txt = document.f1.t1.value;
+            document.f1.t1.value = txt.toUpperCase();
+
+        }
+        function SelectID(){
+            var ch = document.f1.t1.value;
+            document.f1.s1.selectedIndex = ch;
+        }
+        function PassIDToText(){
+            document.f1.t1.value = document.f1.s1.selectedIndex;
+        }
+    </script>
+</head>
+<body onLoad="document.f1.t1.focus()">
+    <form name="f1">
+        <select name="s1" onChange="PassIDToText()">
+            <option value="">index 0</option>
+            <option value="">index 1</option>
+            <option value="">index 2</option>
+            <option value="">index 3</option>
+        </select>
+        <input type=text name="t1" value="">
+        <input type="button" name="b1" value="Click here" onClick="SelectID()">
+    </form>
+    
+</body>
+</html>
+
